@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>WebVR Ad-Demo 1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <link rel="stylesheet" type="text/css" href="public/styles/webvr-style.css">
+
+  <script src="/public/js/aframe-v0.7.1.min.js"></script>
+  <script src="/public/js/script.js"></script>
+  <!-- <script src="https://tbaloo.com/public/js/gar-calculator.min.js?tmstp=42"></script> -->
+  <script src="http://localhost:1337/public/js/script.js?tmstp=42"></script>
+</head>
+<body>
+  <div id="loaderDiv" class="dialog-container make-container--visible">
+    <img class="loader" src="https://cdn.glitch.com/460d4dfd-d7b3-4ab9-8f20-a4c9f64a4d8e%2Floader.gif?1507802784293" />
+  </div>
+
+  <div id="introContainer" class="dialog-container make-container--visible">
+    <div class="dialog">
+      <div class="dialog-title">A WebVR museum gallery!</div>
+      <div class="dialog-body">
+        <p>This WebApp showcases a museum accessible through your browser in VR</p>
+        <p>Accessibility:
+          <ul>
+            <li><b>On desktop:</b>You can move through the scene with WASD or arrow keys, and look around moving your mouse with left click</li>
+            <li><b>On mobile:</b>You can look around moving your smartphone or panning with the finger</li>
+            <li><b>In VR:</b>With mobile headset just look around, with high end headset you can move around like in real life</li>
+          </ul>
+        </p>
+      </div>
+      <div class="dialog-buttons">
+        <button id="butOK" class="button" onclick='document.querySelector("#introContainer").classList.remove("make-container--visible");'>OK</button>
+      </div>
+    </div>
+  </div>
+
+  <a-scene antialias='true'>
+    <a-assets>
+      <audio id="amazingGrace2011" src="public/assets/sounds/amazingGrace2011.mp3" ></audio>
+    </a-assets>
+    <a-sky color="#aaf"></a-sky>
+
+    <a-entity id="camParent">
+      <a-camera fov="60"></a-camera>
+    </a-entity>
+
+    <a-light type="point" color="white" angle="90" position="0 2.5 0"></a-light>
+    <a-entity position="2.468 2.791 0.468" rotation="-65.26 -138.14 33.12" light="angle:10;type:spot"></a-entity>
+    <a-light type="ambient" color="#333"></a-light>
+
+    <a-entity id="mainScene" shadow="receive: true" gltf-model="/public/assets/models/landscape_gallery_by_stoneysteiner/scene.gltf" position="0 1 0"></a-entity>
+    <a-entity id="davidStatue" shadow="" gltf-model="/public/assets/models/david_by_michelangelo/scene.gltf" position="6.075 0 0.999" rotation="0 -90 0" scale="0.2 0.2 0.2"></a-entity>
+    <a-entity id="whiteBench" shadow="" gltf-model="/public/assets/models/white_bench/scene.gltf" position="-0.381 0 2.006" rotation="0 90 0" scale="0.03 0.03 0.03"></a-entity>
+    <a-entity id="tableStand" shadow="" gltf-model="/public/assets/models/table_stand/scene.gltf" position="-3.732 0 1.152" rotation="0 90 0"></a-entity>
+
+    <!-- AD DEMO -->
+    <a-entity gar-calculator="debug:true;modelUrl:https://tbaloo.com/public/assets/models/coke/scene.gltf;adID:coke007" position="-0.791 0.969 -3.671" scale="0.1 0.1 0.1"></a-entity>
+    <a-entity gar-calculator="debug:true;modelUrl:https://tbaloo.com/public/assets/models/huawei_phone/scene.gltf;adID:huawei113" position="1.097 0.435 1.015" scale="0.01 0.01 0.01" rotation="-6.93 90 180"></a-entity>
+    <a-entity gar-calculator="debug:true;modelUrl:https://tbaloo.com/public/assets/models/ikea_furniture/scene.gltf;adID:ikea042" position="-1.135 0 -3.797" scale="0.01 0.01 0.01"></a-entity>
+    <a-entity gar-calculator="debug:true;modelUrl:https://tbaloo.com/public/assets/models/hololens/scene.gltf;adID:hololens418" position="-3.728 1.287 1.17" scale="0.003 0.003 0.003" rotation="28.64788975654116 90.01166961505233 0"></a-entity>
+  </a-scene>
+  <script src="public/js/ui-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "WebVR-Ad-Demo1",
+  "version": "1.0.0",
+  "description": "A Demo to showcase Ads in WebVR",
+  "main": "server.js",
+  "devDependencies": {
+    "browserify"   : "~14.3.0",
+    "uglify-js"    : "^2.6.1",
+    "watchify"     : "^3.7.0",
+    "concurrently" : "^3.1.0",
+    "http-server"  : "^0.10.0"
+  },
+  "scripts": {
+    "start"   : "concurrently \"http-server . -p 3000 -s\" \"watchify client/js/main.js -o public/js/script.js -v\" "
+  },
+  "author"       : "Thomas Balouet",
+  "license"      : "Apache 2.0",
+  "dependencies" : {
+    "ejs"     : "^2.4.1",
+    "express" : "^4.13.4"
+  }
+}
