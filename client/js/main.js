@@ -2,6 +2,22 @@
 (function(){
   "use strict";
 
+  (function(){
+    window.addEventListener("load", function load(event){
+      window.removeEventListener("load", load, false); //remove listener, no longer needed
+
+      function onSceneLoaded(){
+        document.querySelector("#loaderDiv").classList.remove('make-container--visible');
+        console.log("model-loaded");
+      };
+      (document.querySelector("#mainScene").object3D.children.length ? onSceneLoaded() : document.querySelector("#mainScene").addEventListener("model-loaded", onSceneLoaded));
+
+      document.querySelector("#butOK").addEventListener("click", function(){
+        document.querySelector("#amazingGrace2011").play();
+      });
+    },false);
+  })();
+  
   console.log("David by Michelangelo(https://sketchfab.com/models/8f4827cf36964a17b90bad11f48298ac) by jerryfisher(https://sketchfab.com/jerryfisher) is licensed under CC Attribution(http://creativecommons.org/licenses/by/4.0/)");
   console.log("Landscape gallery by @stoneysteiner(https://sketchfab.com/models/3702735762544e5796be4740cb6d5efc) by stoneysteiner(https://sketchfab.com/stoneysteiner) is licensed under CC Attribution(http://creativecommons.org/licenses/by/4.0/)");
   console.log("Ikea Συρταριέρα Tarva(https://sketchfab.com/models/dac06400bc854401a03751d7745796d0) by Kostas Kyrsanidis(https://sketchfab.com/3Dreamer) is licensed under CC Attribution(http://creativecommons.org/licenses/by/4.0/)");

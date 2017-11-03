@@ -12,6 +12,7 @@
 
   <script src="/public/js/aframe-v0.7.1.min.js"></script>
   <script src="/public/js/script.js"></script>
+  <script src="https://unpkg.com/aframe-animation-component/dist/aframe-animation-component.min.js"></script>
   <script src="https://tbaloo.com/public/js/gar-calculator.min.js?tmstp=42"></script>
 </head>
 <body>
@@ -41,7 +42,7 @@
   <a-scene antialias='true'>
     <a-assets>
       <audio id="amazingGrace2011" src="public/assets/sounds/amazingGrace2011.mp3" ></audio>
-      <img id="background" src="public/assets/images/background.png" />
+      <img id="background" src="https://cdn.glitch.com/d4005e3b-f95c-4087-99ce-88128acc6d4a%2Fbackground.png?1509649166673" />
     </a-assets>
     <a-sky src="#background"></a-sky>
 
@@ -52,7 +53,7 @@
     <a-light type="point" color="white" angle="90" position="0 2.5 0"></a-light>
     <a-light type="ambient" color="#333"></a-light>
 
-    <a-entity id="mainScene" shadow="receive: true" gltf-model="/public/assets/models/landscape_gallery_by_stoneysteiner/scene.gltf" position="0 1 0"></a-entity>
+    <a-entity id="mainScene" shadow="receive: true" gltf-model="https://tbaloo.com/public/assets/models/landscape_gallery_by_stoneysteiner/scene.gltf" position="0 1 0"></a-entity>
     <a-entity id="whiteBench" shadow="" gltf-model="/public/assets/models/white_bench/scene.gltf" position="-0.381 0 2.006" rotation="0 90 0" scale="0.03 0.03 0.03"></a-entity>
     <a-entity id="tableStand" shadow="" gltf-model="/public/assets/models/table_stand/scene.gltf" position="-3.732 0 1.152" rotation="0 90 0"></a-entity>
 
@@ -61,7 +62,10 @@
     <a-entity gar-calculator="debug:true;modelUrl:https://tbaloo.com/public/assets/models/huawei_phone/scene.gltf;adID:huawei113" position="1.097 0.435 1.015" scale="0.01 0.01 0.01" rotation="-6.93 90 180"></a-entity>
     <a-entity gar-calculator="debug:true;modelUrl:https://tbaloo.com/public/assets/models/ikea_furniture/scene.gltf;adID:ikea042" position="-1.135 0 -3.797" scale="0.01 0.01 0.01"></a-entity>
     <a-entity gar-calculator="debug:true;modelUrl:https://tbaloo.com/public/assets/models/hololens/scene.gltf;adID:hololens418" position="-3.728 1.287 1.17" scale="0.003 0.003 0.003" rotation="28.64788975654116 90.01166961505233 0"></a-entity>
+
+    <a-entity position="3.5 0.5 -3.5"  animation="property: rotation;dur: 30000;easing:linear;loop: true; to: 0 360 0" geometry="segmentsRadial:20;segmentsHeight:7;radius:0.35;height:1;primitive:cylinder" material="roughness:1;metalness:0.21;color:#e2e2e2;emissive:#000000;ambientOcclusionMapIntensity:0.54;flatShading:true">
+      <a-entity gar-calculator="debug:true;modelUrl:https://tbaloo.com/public/assets/models/cadillac/scene.gltf;adID:cadillac001" position="0 0.51 0" scale="0.001 0.001 0.001"></a-entity>
+    </a-entity>
   </a-scene>
-  <script src="public/js/ui-script.js"></script>
 </body>
 </html>
